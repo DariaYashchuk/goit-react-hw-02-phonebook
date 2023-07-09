@@ -61,7 +61,7 @@ export class App extends Component {
 
     const { filter, contacts } = this.state;
     return (
-      <div>
+      <div className='container'>
         <h1>Phonebook</h1>
         <ContactForm onSubmit={this.formSubmitHandler} contacts={contacts} />
 

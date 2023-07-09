@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { AiOutlineUserDelete } from 'react-icons/ai';
+import css from './ContactList.module.css';
 
 const ContactList = ({ contacts, onDelete }) => {
   return (
@@ -7,9 +9,12 @@ const ContactList = ({ contacts, onDelete }) => {
       {contacts.map(({ id, name, number }) => (
         <li key={id}>
           <p>
+            <AiOutlineUserDelete className={css.icon} />
             {name}: {number}
           </p>
-          <button onClick={() => onDelete(id)}>Delete</button>
+          <button className={css.button} onClick={() => onDelete(id)}>
+            Delete
+          </button>
         </li>
       ))}
     </ul>
