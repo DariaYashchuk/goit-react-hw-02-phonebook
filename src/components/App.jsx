@@ -27,9 +27,15 @@ export class App extends Component {
       number,
     };
 
-    this.setState(({ contacts }) => ({
-      contacts: [contact, ...contacts],
-    }));
+    const isNameIncluded = this.state.contacts.some(
+      value => value.name.toLowerCase() === name.toLowerCase()
+    );
+
+    isNameIncluded
+      ? alert(`${name} is already in contacts`)
+      : this.setState(({ contacts }) => ({
+          contacts: [contact, ...contacts],
+        }));
   };
 
   deleteContact = contactId => {
