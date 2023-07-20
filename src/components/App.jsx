@@ -15,11 +15,6 @@ export class App extends Component {
     filter: '',
   };
 
-  handleChange = e => {
-    const { name, value } = e.currentTarget;
-    this.setState({ [name]: value });
-  };
-
   formSubmitHandler = ({ name, number }) => {
     const contact = {
       id: nanoid(),
@@ -61,7 +56,7 @@ export class App extends Component {
 
     const { filter, contacts } = this.state;
     return (
-      <div className='container'>
+      <div className="container">
         <h1>Phonebook</h1>
         <ContactForm onSubmit={this.formSubmitHandler} contacts={contacts} />
 
